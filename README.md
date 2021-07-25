@@ -1,7 +1,7 @@
 # se3050---uee-2021s2_reg_we_38
 se3050---uee-2021s2_reg_we_38 created by GitHub Classroom
 
-# Selected Mobile App Name - Riyasewana
+# Selected Mobile App - Riyasewana
 
 Group Members 
 
