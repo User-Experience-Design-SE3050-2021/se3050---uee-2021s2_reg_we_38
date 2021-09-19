@@ -4,8 +4,9 @@ import 'react-native-gesture-handler';
 import Home from './screens/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ReviewScreen from './screens/Review';
-import AddReviewScreen from './screens/AddReview';
+import Login from './screens/Login';
+import UpdateProfile from './screens/UpdateProfile';
+import Profile from './screens/Profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,8 +26,6 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Update Profile" component={UpdateProfile} />
-        <Stack.Screen name="Add Review" component={AddReviewScreen} />
-        <Stack.Screen name="Review" component={ReviewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
