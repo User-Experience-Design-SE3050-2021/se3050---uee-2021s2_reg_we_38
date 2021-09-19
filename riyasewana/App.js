@@ -8,6 +8,9 @@ import Login from './screens/Login';
 import UpdateProfile from './screens/UpdateProfile';
 import Profile from './screens/Profile';
 
+import ReviewScreen from './screens/Review';
+import AddReviewScreen from './screens/AddReview';
+
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
@@ -26,6 +29,8 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Update Profile" component={UpdateProfile} />
+        <Stack.Screen name="Add Review" component={AddReviewScreen} />
+        <Stack.Screen name="Review" component={ReviewScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
