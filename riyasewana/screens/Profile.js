@@ -13,7 +13,7 @@ const Profile = ({navigation}) => {
     <View style={styles.container}>
       <Image
         source={{
-          uri: 'https://pbs.twimg.com/profile_images/843440346302357504/yGLGaQgl.jpg',
+          uri: 'https://www.pngall.com/wp-content/uploads/5/User-Profile-PNG-High-Quality-Image.png',
         }}
         style={{width: 200, height: 200, borderRadius: 50}}
       />
