@@ -71,7 +71,7 @@ export default function AddReview({ navigation }) {
 const styles = StyleSheet.create({
     bottomView: {
         flex: 1.5,
-        backgroundColor: '#EFECE8',
+        backgroundColor: '#Ffff', //#EFECE8
         bottom: 15,
         borderTopStartRadius:30,
         borderTopEndRadius: 30,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     // },
     textInputView: {
         height: 50,
-        backgroundColor: '#fff',
+        backgroundColor: colors.textLight,
         fontSize: 20,
         padding: 10,
         borderRadius: 20,
