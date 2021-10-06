@@ -24,7 +24,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={globalScreenOptions}
-        initialRouteName="Login">
+        initialRouteName="Profile">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
