@@ -7,11 +7,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './screens/Login';
 import UpdateProfile from './screens/UpdateProfile';
 import Profile from './screens/Profile';
+import Register from './screens/Register';
+
+
 
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
-  headerStyle: {backgroundColor: '#2c6BED'},
+  headerStyle: {backgroundColor: '#009387'},
   headerTitleStyle: {color: 'white'},
   headerTintColor: 'white',
 };
@@ -21,10 +24,11 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={globalScreenOptions}
-        initialRouteName="Profile">
+        initialRouteName="Login">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name="Update Profile" component={UpdateProfile} />
       </Stack.Navigator>
     </NavigationContainer>
