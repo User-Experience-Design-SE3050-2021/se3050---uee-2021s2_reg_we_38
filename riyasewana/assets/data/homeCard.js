@@ -1,36 +1,28 @@
-const cardView = [
+const homeCard = [
     {
         id: 1,
         image: require('../images/vehicle.jpg'),
-        name: "Didula",
+        name: "Vehicle 1",
         description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
-        price: 10000,
     },
     {
         id: 2,
         image: require('../images/vehicle2.jpg'),
-        name: "Saman",
+        name: "Vehicle ",
         description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
-        price: 20000,
     },
     {
         id: 3,
         image: require('../images/vehicle.jpg'),
-        name: "Kamal",
+        name: "Vehicle 3",
         description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
-        price: 30000,
     },
     {
         id: 4,
         image: require('../images/vehicle.jpg'),
-        name: "Nimal",
+        name: "Vehicle 4",
         description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
-        price: 40000,
     }
 ];
 
-export default cardView;
+export default homeCard;
