@@ -5,7 +5,7 @@ import listWish from '../assets/data/cardView';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function wishlist() {
+export default function Wishlist() {
 
     const WishCard = ({ item }) => {
         return <View style={styles.wishCard}>

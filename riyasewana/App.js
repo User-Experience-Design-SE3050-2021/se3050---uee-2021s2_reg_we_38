@@ -8,7 +8,9 @@ import Login from './screens/Login';
 import UpdateProfile from './screens/UpdateProfile';
 import Profile from './screens/Profile';
 import Register from './screens/Register';
-
+import Wishlist from './screens/Wishlist';
+import SinglePost from './screens/SinglePost';
+import SingleWishlist from './screens/SingleWishlist';
 
 
 const Stack = createNativeStackNavigator();
@@ -24,12 +26,15 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={globalScreenOptions}
-        initialRouteName="Profile">
+        initialRouteName="SinglePost">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Register" component={Register}/>
         <Stack.Screen name="Update Profile" component={UpdateProfile} />
+        <Stack.Screen name="Wishlist" component={Wishlist}/>
+        <Stack.Screen name="SinglePost" component={SinglePost}/>
+        <Stack.Screen name="SingleWishlist" component={SingleWishlist}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
