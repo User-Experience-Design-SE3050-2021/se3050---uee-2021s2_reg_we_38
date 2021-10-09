@@ -8,6 +8,9 @@ import Login from './screens/Login';
 import UpdateProfile from './screens/UpdateProfile';
 import Profile from './screens/Profile';
 
+import Review from './screens/Review';
+import AddReviewScreen from './screens/AddReview';
+
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
@@ -21,11 +24,13 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={globalScreenOptions}
-        initialRouteName="Profile">
-        {/* <Stack.Screen name="Home" component={Home} />
+        initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Update Profile" component={UpdateProfile} /> */}
+        <Stack.Screen name="Update Profile" component={UpdateProfile} />
+        <Stack.Screen name="Add Review" component={AddReviewScreen} />
+        <Stack.Screen name="Review" component={Review} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -34,3 +39,4 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({});
+
