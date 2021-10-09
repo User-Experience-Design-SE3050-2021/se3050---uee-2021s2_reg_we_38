@@ -7,4 +7,5 @@ const colors = {
     orangeP: '#E4723C',
 }
 
+
 export default colors;
