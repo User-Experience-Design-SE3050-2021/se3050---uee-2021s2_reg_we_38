@@ -100,6 +100,11 @@ const SingleWishlist = ({ navigation }) => {
                 <Modal isVisible={isModalVisible}>
                     <View style={styles.callModel}>
                         <Text>Hello!</Text>
+                        <Image style={{ height: 20, width: 30, marginLeft: 10, marginRight: 10 }}
+                            source={{ uri: 'https://img.icons8.com/fluency/48/000000/phone-disconnected.png', }} />
+
+                        <Image style={{ height: 20, width: 30, marginLeft: 10, marginRight: 10 }}
+                            source={{ uri: 'https://img.icons8.com/fluency/48/000000/chat-message.png', }} />
                         <Button title="CLOSE" onPress={toggleModal} />
                     </View>
                 </Modal>

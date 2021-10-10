@@ -177,7 +177,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginTop: 20,
         alignItems: 'center',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
+        marginLeft: 70,
+        marginRight: 70
     },
     textAboout: {
         fontFamily: 'Montserrat-Bold',

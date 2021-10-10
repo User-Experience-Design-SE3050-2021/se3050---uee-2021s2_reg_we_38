@@ -9,19 +9,20 @@ export default function Wishlist() {
 
     const WishCard = ({ item }) => {
         return <View style={styles.wishCard}>
-            <Image source={item.image} style={{ height: 140, width: 170, marginLeft: -10 }} />
+            <Image source={item.image} style={{ height: 130, width: 150, marginLeft: -5 }} />
             <View style={styles.cardWishlistData}>
                 <Text style={styles.wishVehicleName}>{item.vName}</Text>
-                <Text style={styles.wishVehiclePrice}>{item.price} Rs</Text>
+                <Text style={styles.wishVehiclePrice}>Rs.5,000,000</Text>
 
-                <View style={styles.buttonView}>
+                <Text style={styles.wishVehiclePrice}>The vehicle is brand new condition.</Text>
+                {/* <View style={styles.buttonView}>
                     <Pressable style={styles.button}>
                         <MaterialCommunityIcon name="crown" size={18} color={colors.textLight} />
                     </Pressable>
                     <Pressable style={styles.button}>
                         <MaterialCommunityIcon name="crown" size={18} color={colors.textLight} />
                     </Pressable>
-                </View>
+                </View> */}
 
             </View>
         </View>
