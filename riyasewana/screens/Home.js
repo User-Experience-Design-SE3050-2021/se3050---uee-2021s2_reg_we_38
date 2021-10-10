@@ -13,15 +13,26 @@ import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
-import { Icon } from "react-native-elements";
+import {Icon} from 'react-native-elements';
 Feather.loadFont();
 MaterialCommunityIcon.loadFont();
 MaterialIcons.loadFont();
 
 const categories = ['VEHICLES', 'BIKES', 'PARTS'];
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [selectCategory, setSelectCategory] = useState(0);
+  const [searchFilter, setSearchFilter] = useState(homeCard);
+
+  const searchVehicle = (textToSearch) => {
+    setSearchFilter(
+      homeCard.filter((i) =>
+        i.name.toLowerCase().includes(textToSearch)
+      )
+    );
+  };
+
+  console.log(selectCategory);
 
   return (
     <View style={styles.container}>
@@ -31,7 +42,7 @@ const Home = () => {
           {/* can add icon here */}
           <Icon
             // style={tw`rounded-full p-4`}
-            style={{ padding: 10 }}
+            style={{padding: 10}}
             name="search"
             type="ionicon"
             color="black"
@@ -41,45 +52,54 @@ const Home = () => {
             placeholder="Search"
             size={25}
             style={styles.searchinput}
+            onChange={(text) => searchVehicle(text)}
           />
         </View>
 
         {/* near the search button */}
         <View style={styles.sortBtn}>
-            <Icon
-                // style={tw`rounded-full p-4`}
-                name="filter-outline"
-                type="ionicon"
-                color="black"
-                size={18}
-            />
+          <Icon
+            // style={tw`rounded-full p-4`}
+            name="filter-outline"
+            type="ionicon"
+            color="black"
+            size={18}
+          />
         </View>
       </View>
 
       {/* category part */}
       <View style={styles.categoryContainer}>
-        {categories.map((category, index) => (
-          // if selected
-          <TouchableOpacity
-            key={index}
-            onPress={() => setSelectCategory(index)}
-            activeOpacity={0.8}>
+        {/* {categories.map((category, index) => ( */}
+          <TouchableOpacity>
+            {/* // key={index}
+            // onPress={() => setSelectCategory(index)}
+            // activeOpacity={0.8}> */}
             <Text
-              style={[
-                styles.categoryText,
-                selectCategory == index && styles.selectCategoryStyle,
-              ]}>
-              {category}
+              style={styles.selectCategoryStyle}>
+             Vehicle
             </Text>
           </TouchableOpacity>
-        ))}
+          <TouchableOpacity
+            onPress={()=>navigation.navigate("Bikes")}
+          >
+          
+            {/* // key={index}
+            // onPress={() => setSelectCategory(index)}
+            // activeOpacity={0.8}> */}
+            <Text
+              style={{color:"black", fontSize:16}}>
+             Parts
+            </Text>
+          </TouchableOpacity>
       </View>
 
       <ScrollView>
         {/* card views */}
         <View style={styles.homeWrapper}>
-          {homeCard.map(item => (
+          {searchFilter.map(item => (
             <View
+            key={item.id}
               style={[
                 styles.homeCardWrapper,
                 {marginTop: item.id == 1 ? 10 : 20},
@@ -246,6 +266,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    backgroundColor: '#C0C0C0'
+    backgroundColor: '#C0C0C0',
   },
 });
