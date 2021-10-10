@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     Text,
@@ -17,9 +17,15 @@ import LinearGradient from 'react-native-linear-gradient';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 import vehicle from '../assets/images/vehicle.jpg';
+import Modal from "react-native-modal";
 
 const SingleWishlist = ({ navigation }) => {
 
+    const [isModalVisible, setModalVisible] = useState(false);
+
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
     return (
         <View style={styles.container}>
             <StatusBar backgroundColor='#009387' barStyle="light-content" />
@@ -35,11 +41,14 @@ const SingleWishlist = ({ navigation }) => {
                     <Text style={styles.vehicleNameText}>
                         Land Rover
                     </Text>
-                    <Text style={styles.text_footer}>Fixed Amount: Rs.5,000,000</Text>
+                    <Text style={[styles.text_footer, { marginTop: 5 }]}>Amount</Text>
+                    <Text style={[styles.textPrivate, { marginTop: 5 }]}>Rs.5,000,000</Text>
+                    <Text style={[styles.text_footer, { marginTop: 10 }]}>Condition</Text>
+                    <Text style={[styles.textPrivate, { marginTop: 5 }]}>Brand New</Text>
 
                     <Text style={[styles.text_footer, {
-                        marginTop: 35
-                    }]}>Seller's Note</Text>
+                        marginTop: 10
+                    }]}>Seller's Message</Text>
 
                     {/* <View style={styles.textPrivate}>
                         <Text style={styles.color_textPrivate}>
@@ -51,14 +60,14 @@ const SingleWishlist = ({ navigation }) => {
                     </View> */}
                     <View style={styles.textPrivate}>
                         <Text style={styles.color_textPrivate}>
-                            The vehicle is brand new condition. Only used during delivery and therefore we wish to 
+                            The vehicle is brand new condition. Only used during delivery and therefore we wish to
                             change our vehicle.
                         </Text>
                     </View>
                     <View style={styles.button}>
                         <TouchableOpacity
                             style={styles.signIn}
-                            onPress={() => { }}
+                            onPress={toggleModal}
                         >
                             <LinearGradient
                                 colors={['#08d4c4', '#01ab9d']}
@@ -71,7 +80,7 @@ const SingleWishlist = ({ navigation }) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity
-                            onPress={() => navigation.goBack()}
+                            onPress={() => navigation.navigate("Wishlist")}
                             style={[styles.signIn, {
                                 borderColor: '#009387',
                                 borderWidth: 1,
@@ -85,6 +94,16 @@ const SingleWishlist = ({ navigation }) => {
                     </View>
                 </ScrollView>
             </Animatable.View>
+
+
+            <View >
+                <Modal isVisible={isModalVisible}>
+                    <View style={styles.callModel}>
+                        <Text>Hello!</Text>
+                        <Button title="CLOSE" onPress={toggleModal} />
+                    </View>
+                </Modal>
+            </View>
         </View>
     );
 };
@@ -92,6 +111,14 @@ const SingleWishlist = ({ navigation }) => {
 export default SingleWishlist;
 
 const styles = StyleSheet.create({
+    callModel: {
+        flex: Platform.OS === 'ios' ? 3 : 5,
+        backgroundColor: '#F6F6F6',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        paddingHorizontal: 20,
+        paddingVertical: 30
+    },
     container: {
         flex: 1,
         backgroundColor: '#fff'
@@ -134,7 +161,7 @@ const styles = StyleSheet.create({
     },
     button: {
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 10
     },
     signIn: {
         width: '100%',
@@ -150,7 +177,7 @@ const styles = StyleSheet.create({
     textPrivate: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        marginTop: 20
+        marginTop: 5
     },
     color_textPrivate: {
         color: 'grey'

@@ -11,6 +11,7 @@ import Register from './screens/Register';
 import Wishlist from './screens/Wishlist';
 import SinglePost from './screens/SinglePost';
 import SingleWishlist from './screens/SingleWishlist';
+import CallModel from './screens/CallModel';
 
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +36,7 @@ const App = () => {
         <Stack.Screen name="Wishlist" component={Wishlist}/>
         <Stack.Screen name="SinglePost" component={SinglePost}/>
         <Stack.Screen name="SingleWishlist" component={SingleWishlist}/>
+        <Stack.Screen name="CallModel" component={CallModel}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

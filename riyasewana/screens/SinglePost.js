@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import colors from '../assets/colors/colors';
+import LinearGradient from 'react-native-linear-gradient';
 
 const SingleWishlist = ({ navigation }) => {
     return (
@@ -53,12 +54,33 @@ const SingleWishlist = ({ navigation }) => {
                     <Text style={styles.textAboout}>2016</Text>
                 </View>
 
-                <TouchableOpacity style={styles.button1} onPress={() => navigation.navigate("Home")}>
-                    <Text style={styles.buttonText1}>Review</Text>
+                <TouchableOpacity style={styles.signIn} onPress={() => navigation.navigate("Home")}>
+                    <LinearGradient
+                        colors={['#08d4c4', '#01ab9d']}
+                        style={styles.signIn}>
+                        <Text style={[styles.textSign, {
+                            color: '#fff'
+                        }]}>Review
+                        </Text>
+                    </LinearGradient>
                 </TouchableOpacity>
+                {/* <TouchableOpacity style={styles.button1} onPress={() => navigation.navigate("Home")}>
+                    <Text style={styles.buttonText1}>Review</Text>
+                </TouchableOpacity> */}
 
-                <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate("SingleWishlist")}>
+                {/* <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate("SingleWishlist")}>
                     <Text style={styles.buttonText2}>More</Text>
+                </TouchableOpacity> */}
+                <TouchableOpacity onPress={() => navigation.navigate("SingleWishlist")}
+                    style={[styles.signIn, {
+                        borderColor: '#009387',
+                        borderWidth: 1,
+                        marginTop: 20
+                    }]}>
+                    <Text style={[styles.textSign, {
+                        color: '#009387'
+                    }]}>More
+                    </Text>
                 </TouchableOpacity>
 
             </View>
@@ -89,7 +111,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    
+
     showDetails: {
         flex: 0.65,
         // backgroundColor: '#F1F1F1',
@@ -127,7 +149,7 @@ const styles = StyleSheet.create({
     vehicleNameText: {
         fontSize: 22,
         fontWeight: 'bold',
-        color:'#009387'
+        color: '#009387'
     },
 
     vehiclePrice: {
@@ -189,11 +211,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderColor: '#F1F1F1',
         borderWidth: 2,
-        marginTop: 10,
-        borderRadius: 25,
+        marginTop: 20,
+        // borderRadius: 25,
         marginBottom: 10,
-        marginLeft: 10,
-        marginRight: 10
+        // marginLeft: 10,
+        // marginRight: 10,
+
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
     },
     buttonText2: {
         color: 'black',
@@ -201,5 +229,18 @@ const styles = StyleSheet.create({
         padding: 7,
         textAlign: 'center',
         fontSize: 20,
+    },
+    signIn: {
+        width: '100%',
+        height: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10,
+        marginTop: 30,
+
+    },
+    textSign: {
+        fontSize: 18,
+        fontWeight: 'bold'
     },
 })
