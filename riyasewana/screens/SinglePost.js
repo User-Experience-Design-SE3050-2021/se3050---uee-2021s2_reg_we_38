@@ -18,7 +18,7 @@ const SingleWishlist = ({ navigation }) => {
 
                     {/* line with brand */}
                     <View />
-                    <Text style={{ fontWeight: 'bold', fontSize: 18, color: 'gray' }}>
+                    <Text style={{ fontWeight: 'bold', fontSize: 18, color: '#05375a' }}>
                         Brand New
                     </Text>
                 </View>

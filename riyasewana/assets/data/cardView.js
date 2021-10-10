@@ -12,25 +12,25 @@ const cardView = [
         image: require('../images/vehicle2.jpg'),
         name: "Saman",
         description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
+        vName: "Land Cruiser",
         price: 20000,
     },
-    {
-        id: 3,
-        image: require('../images/vehicle.jpg'),
-        name: "Kamal",
-        description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
-        price: 30000,
-    },
-    {
-        id: 4,
-        image: require('../images/vehicle.jpg'),
-        name: "Nimal",
-        description: "this is good vehicle and recomended for you..!",
-        vName: "Land Rover",
-        price: 40000,
-    }
+    // {
+    //     id: 3,
+    //     image: require('../images/vehicle.jpg'),
+    //     name: "Kamal",
+    //     description: "this is good vehicle and recomended for you..!",
+    //     vName: "Land Rover",
+    //     price: 30000,
+    // },
+    // {
+    //     id: 4,
+    //     image: require('../images/vehicle.jpg'),
+    //     name: "Nimal",
+    //     description: "this is good vehicle and recomended for you..!",
+    //     vName: "Land Rover",
+    //     price: 40000,
+    // }
 ];
 
 export default cardView;
