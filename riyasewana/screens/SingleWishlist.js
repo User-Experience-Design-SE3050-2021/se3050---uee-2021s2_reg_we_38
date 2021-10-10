@@ -99,13 +99,15 @@ const SingleWishlist = ({ navigation }) => {
             <View >
                 <Modal isVisible={isModalVisible}>
                     <View style={styles.callModel}>
-                        <Text>Hello!</Text>
-                        <Image style={{ height: 20, width: 30, marginLeft: 10, marginRight: 10 }}
-                            source={{ uri: 'https://img.icons8.com/fluency/48/000000/phone-disconnected.png', }} />
+                        <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: 50, marginTop: 50 }}>
+                            <Image style={{ height: 20, width: 30, marginLeft: 10, marginRight: 10 }}
+                                source={{ uri: 'https://img.icons8.com/fluency/48/000000/phone-disconnected.png', }} />
 
-                        <Image style={{ height: 20, width: 30, marginLeft: 10, marginRight: 10 }}
-                            source={{ uri: 'https://img.icons8.com/fluency/48/000000/chat-message.png', }} />
-                        <Button title="CLOSE" onPress={toggleModal} />
+                            <Image style={{ height: 20, width: 30, marginLeft: 10, marginRight: 10 }}
+                                source={{ uri: 'https://img.icons8.com/fluency/48/000000/chat-message.png', }} />
+                        </View>
+                        <Button style={{}}
+                            title="CLOSE" onPress={toggleModal} />
                     </View>
                 </Modal>
             </View>
@@ -117,12 +119,18 @@ export default SingleWishlist;
 
 const styles = StyleSheet.create({
     callModel: {
-        flex: Platform.OS === 'ios' ? 3 : 5,
+        flex: 1,
         backgroundColor: '#F6F6F6',
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
         paddingHorizontal: 20,
-        paddingVertical: 30
+        paddingVertical: 30,
+        marginLeft: 30,
+        marginRight: 30,
+        marginTop: 250,
+        marginBottom: 200
     },
     container: {
         flex: 1,

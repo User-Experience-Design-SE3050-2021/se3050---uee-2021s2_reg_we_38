@@ -32,18 +32,17 @@ export default function Wishlist() {
         <View style={styles.container}>
             {/* titles */}
             <View style={styles.titleWrapper}>
-                <Text style={styles.titleSub}>WishList</Text>
+                {/* <Text style={styles.titleSub}>WishList</Text> */}
             </View>
 
             {/* search */}
-            <View style={styles.searchWrapper}>
+            {/* <View style={styles.searchWrapper}>
                 <Feather name="search" size={20} style={{ marginTop: -15 }} color={colors.textDark} />
                 <TextInput
                     style={styles.textInputView}
                     placeholder="Search....."
-                // onChangeText={(text) => this.setState({text})}  
                 />
-            </View>
+            </View> */}
 
             <FlatList
                 showsVerticalScrollIndicator={false}
