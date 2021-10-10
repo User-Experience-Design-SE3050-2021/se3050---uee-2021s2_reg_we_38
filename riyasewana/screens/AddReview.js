@@ -116,16 +116,19 @@ const styles = StyleSheet.create({
     },
     AddReviewTextInput: {
         height: '70%',
-        backgroundColor: 'gray',
+        // backgroundColor: '#D3D3D3',
+        backgroundColor: '#009387',
         display: 'flex',
         alignItems: 'center',
         borderTopLeftRadius: 25,
         borderTopRightRadius: 25,
     },
     vehicleTextTopic: {
-        fontSize: 25,
+        fontSize: 20,
         marginBottom: 20,
-        fontFamily: 'Montserrat-Bold'
+        fontFamily: 'Montserrat-Bold',
+        marginTop: 20,
+        marginBottom: 40,
     },
     inputView: {
       backgroundColor: "#FFF",

@@ -18,7 +18,7 @@ Feather.loadFont();
 MaterialCommunityIcon.loadFont();
 MaterialIcons.loadFont();
 
-const categories = ['VEHICLES', 'BIKES', 'PARTS'];
+const categories = ['VEHICLES', 'PARTS'];
 
 const Home = () => {
   const [selectCategory, setSelectCategory] = useState(0);
@@ -80,6 +80,7 @@ const Home = () => {
         <View style={styles.homeWrapper}>
           {homeCard.map(item => (
             <View
+            key={item.id}
               style={[
                 styles.homeCardWrapper,
                 {marginTop: item.id == 1 ? 10 : 20},

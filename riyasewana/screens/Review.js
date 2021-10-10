@@ -92,8 +92,9 @@ export default function Review() {
                       maxStars={5}
                       rating={starRate}
                       selectedStar={rating => onStarPress(rating)}
-                      fullStarColor="white"
+                      fullStarColor="gold"
                       starSize={18}
+                      emptyStarColor="gold"
                     />
                   </View>
 
