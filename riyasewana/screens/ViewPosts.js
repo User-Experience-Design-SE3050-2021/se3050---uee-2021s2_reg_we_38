@@ -46,7 +46,6 @@ export default function ViewPost() {
                                     </View>
 
                                 </View>
-
                                 <View style={styles.homeImageBody}>
                                     <Image
                                     source={item.image}
