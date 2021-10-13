@@ -22,22 +22,17 @@ export default function AddReview({navigation}) {
 
   // save rate
   const saveRate = () => {
-    // if(name === '' || des === '' || starRate === 0){
-    //   alert('Please fill form');
-    // }
-    // else{
+    if(name === '' || des === '' || starRate === 0){
+      alert('Please fill form');
+    }
+    else{
       try{
-        // await firebase.db.collection('review').add({
-        //   name: name,
-        //   description: des,
-        //   rate: starRate,
-        // });
-        // alert('added');
+        alert('added');
         navigation.navigate("Review")
       } catch(error){
         console.log(error);
       }
-    // }
+    }
   }
 
   return (
@@ -61,7 +56,7 @@ export default function AddReview({navigation}) {
               <TextInput
                 style={styles.TextInput}
                 placeholder="First Name"
-                placeholderTextColor="#003f5c"
+                placeholderTextColor="gray"
                   value={name}
                   onChangeText={(text) => setName(text)}
               />
@@ -72,7 +67,7 @@ export default function AddReview({navigation}) {
                 multiline
                 style={styles.TextInputDescription}
                 placeholder="Description"
-                placeholderTextColor="#003f5c"
+                placeholderTextColor="gray"
                 numberOfLines={4}
                   value={des}
                   onChangeText={(text) => setDes(text)}
@@ -109,13 +104,13 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     AddReviewPhoto: {
-        height: '30%',
+        height: '40%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
     },
     AddReviewTextInput: {
-        height: '70%',
+        height: '60%',
         // backgroundColor: '#D3D3D3',
         backgroundColor: '#009387',
         display: 'flex',
@@ -124,11 +119,13 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 25,
     },
     vehicleTextTopic: {
-        fontSize: 20,
+        fontSize: 30,
         marginBottom: 20,
-        fontFamily: 'Montserrat-Bold',
+        // fontFamily: 'Montserrat-Bold',
+        fontWeight: 'bold',
         marginTop: 20,
         marginBottom: 40,
+        color: '#FFF',
     },
     inputView: {
       backgroundColor: "#FFF",
