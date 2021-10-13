@@ -8,7 +8,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from './screens/Login';
 import UpdateProfile from './screens/UpdateProfile';
 import Profile from './screens/Profile';
-
+import MainScreen from './screens/MainScreen';
 import Review from './screens/Review';
 import AddReviewScreen from './screens/AddReview';
 import Navigation from './screens/Navigation';
@@ -29,6 +29,7 @@ const App = () => {
         screenOptions={globalScreenOptions}
         initialRouteName="Home">
         {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> */}
+	<Stack.Screen name="MainScreen" component={MainScreen} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
