@@ -16,10 +16,14 @@ import AddReviewScreen from './screens/AddReview';
 import pendingPosts from './screens/pendingPosts';
 import approvedPosts from './screens/approvedPosts';
 
+import Navigation from './screens/Navigation';
+// import SplashScreen from './screens/SplashScreen';
+
+
 const Stack = createNativeStackNavigator();
 
 const globalScreenOptions = {
-  headerStyle: {backgroundColor: '#2c6BED'},
+  headerStyle: {backgroundColor: '#009387'},
   headerTitleStyle: {color: 'white'},
   headerTintColor: 'white',
 };
@@ -29,7 +33,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={globalScreenOptions}
-        initialRouteName="Pending Posts">
+        initialRouteName="Home">
+        {/* <Stack.Screen name="SplashScreen" component={SplashScreen} /> */}
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Profile" component={Profile} />
@@ -42,6 +47,12 @@ const App = () => {
         <Stack.Screen name="Parts" component={Parts} />
         <Stack.Screen name="Pending Posts" component={pendingPosts} />
         <Stack.Screen name="Approved Posts" component={approvedPosts} />
+        <Stack.Screen name="Register" component={Register}/>
+        <Stack.Screen name="Update Profile" component={UpdateProfile} />
+        <Stack.Screen name="Wishlist" component={Wishlist}/>
+        <Stack.Screen name="SinglePost" component={SinglePost}/>
+        <Stack.Screen name="SingleWishlist" component={SingleWishlist}/>
+        <Stack.Screen name="CallModel" component={CallModel}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -50,4 +61,3 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({});
-

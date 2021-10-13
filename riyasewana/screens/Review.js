@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -6,24 +7,35 @@ import {
   Image,
   ScrollView,
   TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import ReviewData from '../assets/data/cardView';
+import ReviewData from '../../assets/data/cardView';
 import StarRating from 'react-native-star-rating';
-import colors from '../assets/colors/colors';
+import colors from '../../assets/colors/colors';
 import { Icon } from "react-native-elements";
 Feather.loadFont();
 MaterialCommunityIcon.loadFont();
 MaterialIcons.loadFont();
 
-export default function Review() {
+export default function Review({ navigation }) {
   const [starRate, setStarRate] = React.useState(3);
 
   const onStarPress = rating => {
     setStarRate(rating);
   };
+
+  const searchTimeTable = (textToSearch) => {
+    setSearchFilter(
+      ReviewData.filter((i) =>
+        i.vName.toLowerCase().includes(textToSearch.toLowerCase())
+      )
+    );
+  };
+
+  const [searchFilter, setSearchFilter] = useState(ReviewData);
 
   return (
     <View style={styles.container}>
@@ -48,6 +60,7 @@ export default function Review() {
             placeholder="Search"
             size={25}
             style={styles.searchinput}
+            onChangeText={(text) => searchTimeTable(text)}
             // onChangeText={text => searchTimeTable(text)}
           />
         </View>
@@ -56,16 +69,18 @@ export default function Review() {
       <ScrollView>
         {/* card views */}
         <View style={styles.reviewWrapper}>
-          {ReviewData.map(item => (
+          {searchFilter.map(item => (
+            <TouchableOpacity onPress={() => navigation.navigate("ReviewDetails")}>
             <View
+              key={item.id}
               style={[
                 styles.reviewCardWrapper,
                 {marginTop: item.id == 1 ? 10 : 20},
               ]}>
               <View>
-                <View key={item.id}>
+                <View>
                   {/* top name and icon */}
-                  <View style={styles.reviewTopWrapper}>
+                  <View style={styles.reviewTopWrapper} onPress={() => navigation.navigate("SingleReview")}>
                     <MaterialCommunityIcon
                       name="crown"
                       size={18}
@@ -92,8 +107,9 @@ export default function Review() {
                       maxStars={5}
                       rating={starRate}
                       selectedStar={rating => onStarPress(rating)}
-                      fullStarColor="white"
+                      fullStarColor="gold"
                       starSize={18}
+                      emptyStarColor="gold"
                     />
                   </View>
 
@@ -112,6 +128,7 @@ export default function Review() {
                 <Image source={item.image} style={styles.reviewCardImage} />
               </View>
             </View>
+            </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
@@ -133,12 +150,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   titleMain: {
-    fontFamily: 'Montserrat-Regular',
+    // fontFamily: 'Montserrat-Regular',
+    fontWeight: '500',
     fontSize: 16,
     color: colors.primary,
   },
   titleSub: {
-    fontFamily: 'Montserrat-Bold',
+    // fontFamily: 'Montserrat-Bold',
+    fontWeight: 'bold',
     fontSize: 32,
     color: colors.primary,
     marginTop: 4,
@@ -157,6 +176,7 @@ const styles = StyleSheet.create({
   },
   reviewWrapper: {
     paddingHorizontal: 20,
+    paddingVertical:10,
   },
   reviewCardWrapper: {
     backgroundColor: colors.background,
@@ -173,14 +193,16 @@ const styles = StyleSheet.create({
   },
   reviewTopText: {
     marginLeft: 10,
-    fontFamily: 'Montserrat-SemiBold',
+    // fontFamily: 'Montserrat-SemiBold',
+    fontWeight: '500',
     fontSize: 15,
   },
   reviewTitlesWrapper: {
     marginTop: 15,
   },
   reviewDescription: {
-    fontFamily: 'Montserrat-SemiBold',
+    // fontFamily: 'Montserrat-SemiBold',
+    fontWeight: '500',
     fontSize: 12,
     color: colors.textLight,
     marginRight: 200,
@@ -204,7 +226,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   vehicleName: {
-    fontFamily: 'Montserrat-Medium',
+    // fontFamily: 'Montserrat-Medium',
+    fontWeight: '600',
     fontSize: 15,
     color: colors.textDark,
     marginLeft: 5,
