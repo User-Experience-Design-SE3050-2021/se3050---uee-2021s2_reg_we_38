@@ -53,6 +53,12 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
+<<<<<<< HEAD
+		<string>Montserrat-Bold.ttf</string>
+		<string>Montserrat-Medium.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
+=======
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>
 		<string>EvilIcons.ttf</string>
@@ -69,6 +75,7 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+>>>>>>> e8ca949c2909db7d226fe7fc5faa67ca912f4517
 	</array>
 </dict>
 </plist>
